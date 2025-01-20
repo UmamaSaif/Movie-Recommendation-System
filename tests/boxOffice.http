@@ -1,0 +1,16 @@
+# Get box office data for a movie:
+GET http://localhost:5000/api/box-office/64e2b17c2ad77f3e1786ec02
+
+### Update box office data (Admin/Editor only):
+PATCH http://localhost:5000/api/box-office/64e2b17c2ad77f3e1786ec02
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzViNzExMWVlMTEwYmNhMTMxMmNmYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczMTc4MjIyMiwiZXhwIjoxNzMxNzg1ODIyfQ._smnG3pl1lta2hJPcGAynvy4uUD2SKbywyjk4BGG3yo
+
+{
+  "openingWeekend": { "domestic": 10000000, "international": 5000000 },
+  "totalEarnings": { "domestic": 30000000, "international": 20000000 },
+  "budget": 15000000
+}
+
+# Get top 10 grossing movies:
+GET http://localhost:5000/api/box-office/top-grossing

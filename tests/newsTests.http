@@ -1,0 +1,18 @@
+# Create a news article (Admin/Editor only):
+POST http://localhost:5000/api/news
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzViNzExMWVlMTEwYmNhMTMxMmNmYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczMTc4MjIyMiwiZXhwIjoxNzMxNzg1ODIyfQ._smnG3pl1lta2hJPcGAynvy4uUD2SKbywyjk4BGG3yo
+
+{
+  "title": "Breaking: New Movie Announced!",
+  "content": "Details about the movie.",
+  "category": "movie",
+  "tags": ["announcement", "blockbuster"],
+  "image": "path/to/image.jpg"
+}
+
+# Get all news articles:
+GET http://localhost:5000/api/news
+
+# Get a single news article (increments views):
+GET http://localhost:5000/api/news/64e2f1a71b2bf3d8af098b19

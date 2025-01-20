@@ -1,0 +1,51 @@
+### Create a New Review (Requires Auth Token)
+
+POST http://localhost:5000/api/reviews
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzYxNTQwMTBkMTMyNmQ4NGUxZTg4NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzMxNzYzOTMxLCJleHAiOjE3MzE3Njc1MzF9.iUaIKJrr8-rzXZhRh6nU0H7K9-eiASiDYvtmNK5ucaY
+
+{
+  "movie": "6736069c7ba4eeb62ddea26a",
+  "rating": 4,
+  "title": "Great movie!",
+  "content": "I really enjoyed the plot and character development."
+}
+
+###
+
+### Update a Review (Requires Auth Token)
+PATCH http://localhost:5000/api/reviews/67372bdc20207a62743b0221
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzYxNTQwMTBkMTMyNmQ4NGUxZTg4NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzMxNzYzOTMxLCJleHAiOjE3MzE3Njc1MzF9.iUaIKJrr8-rzXZhRh6nU0H7K9-eiASiDYvtmNK5ucaY
+
+{
+  "rating": 5,
+  "title": "Even better after rewatching!",
+  "content": "On the second viewing, I appreciated the details more."
+}
+
+###
+
+### Mark Review as Helpful (Requires Auth Token)
+PATCH http://localhost:5000/api/reviews/67372bdc20207a62743b0221/helpful
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzYxNTQwMTBkMTMyNmQ4NGUxZTg4NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzMxNzYzOTMxLCJleHAiOjE3MzE3Njc1MzF9.iUaIKJrr8-rzXZhRh6nU0H7K9-eiASiDYvtmNK5ucaY
+
+###
+
+### Mark Review as Unhelpful (Requires Auth Token)
+PATCH http://localhost:5000/api/reviews/67372bdc20207a62743b0221/unhelpful
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzYxNTQwMTBkMTMyNmQ4NGUxZTg4NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzMxNjY4NTYyLCJleHAiOjE3MzE2NzIxNjJ9.DeKZGCW2OQ67kNUWZ_Gyo1sHdVCScPm5AHPu_RI5rLU
+
+###
+
+### Get All Reviews for a Movie (Public)
+GET http://localhost:5000/api/reviews/movie/6736069c7ba4eeb62ddea26a
+Content-Type: application/json
+
+###
+
+### Get Top Reviews for a Movie (Public)
+GET http://localhost:5000/api/reviews/movie/6736069c7ba4eeb62ddea26a/top
+Content-Type: application/json

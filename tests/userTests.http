@@ -1,0 +1,55 @@
+# Register a New User
+POST http://localhost:5000/api/users/register
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "password123"
+}
+
+###
+
+# Login with Existing User
+POST http://localhost:5000/api/users/login
+Content-Type: application/json
+
+{
+  "email": "john@example.com",
+  "password": "password123"
+}
+
+###
+
+# Update Profile (Requires Auth Token)
+PATCH http://localhost:5000/api/users/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzYxNTQwMTBkMTMyNmQ4NGUxZTg4NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzMxNzYzNzc5LCJleHAiOjE3MzE3NjczNzl9.1QNRgl67eZEfkeq3Y_UgRvTp8bknd-chJZXjKCI3IS4
+
+{
+  "favoriteGenres": ["Action", "Comedy"],
+  "favoriteActors": ["Robert Downey Jr.", "Scarlett Johansson"]
+}
+
+###
+
+# Add to Wishlist (Requires Auth Token)
+POST http://localhost:5000/api/users/wishlist
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzYxNTQwMTBkMTMyNmQ4NGUxZTg4NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzMxNzYzNzc5LCJleHAiOjE3MzE3NjczNzl9.1QNRgl67eZEfkeq3Y_UgRvTp8bknd-chJZXjKCI3IS4
+
+{
+  "movieId": "6736069c7ba4eeb62ddea26a"
+}
+
+###
+
+# Remove from Wishlist (Requires Auth Token)
+DELETE http://localhost:5000/api/users/wishlist
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzYxNTQwMTBkMTMyNmQ4NGUxZTg4NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzMxNjY4NTYyLCJleHAiOjE3MzE2NzIxNjJ9.DeKZGCW2OQ67kNUWZ_Gyo1sHdVCScPm5AHPu_RI5rLU
+
+{
+  "movieId": "6736069c7ba4eeb62ddea26a"
+}
+

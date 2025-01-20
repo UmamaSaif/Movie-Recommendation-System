@@ -1,0 +1,56 @@
+### Watchlist and Custom Lists
+
+# Create a New List
+POST http://localhost:5000/api/lists
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzYxNTQwMTBkMTMyNmQ4NGUxZTg4NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzMxNzY2MDA5LCJleHAiOjE3MzE3Njk2MDl9.tn2rSMYh-AOgaWQcFEASyBVPCnRTb0Ze6EpJGSpB8m8
+
+{
+    "title": "Best Horror Movies",
+    "description": "A list of the scariest horror films ever made.",
+    "movies": ["6736069c7ba4eeb62ddea26a", "6738a7e26bd25e72cb33f220"],
+    "category": "Custom",
+    "tags": ["horror", "thriller"]
+}
+
+
+# Update a List
+# Updates an existing list (must be owned by the user)
+PATCH http://localhost:5000/api/lists/<listId>
+Content-Type: application/json
+Authorization: Bearer <your_token>
+
+{
+  "title": "Updated List Title",
+  "description": "Updated description for the list."
+}
+
+# Delete a List
+# Deletes a list (must be owned by the user)
+DELETE http://localhost:5000/api/lists/<listId>
+Content-Type: application/json
+Authorization: Bearer <your_token>
+
+# Follow a List
+# Allows users to follow a public list
+POST http://localhost:5000/api/lists/<listId>/follow
+Content-Type: application/json
+Authorization: Bearer <your_token>
+
+# Unfollow a List
+# Allows users to unfollow a previously followed list
+DELETE http://localhost:5000/api/lists/<listId>/follow
+Content-Type: application/json
+Authorization: Bearer <your_token>
+
+# Get User's Lists
+# Fetches all lists created by a specific user
+GET http://localhost:5000/api/lists/user/<userId>
+Content-Type: application/json
+Authorization: Bearer <your_token>
+
+# Get Followed Lists
+# Fetches all lists that the user is currently following
+GET http://localhost:5000/api/lists/followed
+Content-Type: application/json
+Authorization: Bearer <your_token>

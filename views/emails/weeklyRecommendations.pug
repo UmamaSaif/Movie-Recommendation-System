@@ -1,0 +1,14 @@
+// views/emails/weeklyRecommendations.pug
+extends base
+
+block content
+  h1 Your Weekly Movie Recommendations
+  each movie in recommendations
+    div
+      h3= movie.title
+      p Rating: #{movie.rating}/10
+      p= movie.summary
+      p
+        a(href=`/movies/${movie.id}`) Learn More
+    hr
+

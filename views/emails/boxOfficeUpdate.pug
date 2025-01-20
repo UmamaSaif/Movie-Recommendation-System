@@ -1,0 +1,15 @@
+// views/emails/boxOfficeUpdate.pug
+extends base
+
+block content
+  h1 Weekend Box Office Update
+  p Week ending #{weekEndDate}
+  each movie, index in movies
+    div
+      h3 #{index + 1}. #{movie.title}
+      p Earnings: $#{movie.earnings.toLocaleString()}
+      if movie.previousRank
+        p Previous Rank: ##{movie.previousRank}
+      p
+        a(href=`/movies/${movie.id}`) View Movie Details
+    hr

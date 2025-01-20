@@ -1,0 +1,19 @@
+# Create an award entry (Admin/Editor only):
+POST http://localhost:5000/api/awards
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzViNzExMWVlMTEwYmNhMTMxMmNmYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczMTc4MjIyMiwiZXhwIjoxNzMxNzg1ODIyfQ._smnG3pl1lta2hJPcGAynvy4uUD2SKbywyjk4BGG3yo
+
+{
+  "name": "Academy Awards",
+  "category": "Best Picture",
+  "year": 2024,
+  "movie": "64e2b17c2ad77f3e1786ec02",
+  "person": { "name": "John Doe", "role": "Director" },
+  "type": "winner"
+}
+
+# Get awards for a movie:
+GET http://localhost:5000/api/awards/movie/64e2b17c2ad77f3e1786ec02
+
+# Get awards by year:
+GET http://localhost:5000/api/awards/year/2024

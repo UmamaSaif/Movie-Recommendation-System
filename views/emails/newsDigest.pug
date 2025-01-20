@@ -1,0 +1,17 @@
+// views/emails/newsDigest.pug
+extends base
+
+block content
+  h1 Your Movie News Digest
+  each item in newsItems
+    div
+      h3= item.title
+      p= item.summary
+      if item.category
+        p Category: #{item.category}
+      p
+        a(href=`/news/${item.id}`) Read More
+    hr
+
+
+

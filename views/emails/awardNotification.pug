@@ -1,0 +1,11 @@
+// views/emails/awardNotification.pug
+extends base
+
+block content
+  h1 Award Update
+  h2= movieTitle
+  p #{type === 'winner' ? 'Won' : 'Nominated for'} #{awardName}
+  p Category: #{category}
+  p
+    a(href=`/movies/${movieId}`) View Movie Details
+

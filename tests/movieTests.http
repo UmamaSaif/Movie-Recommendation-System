@@ -1,0 +1,34 @@
+### Get All Movies (Public)
+
+GET http://localhost:5000/api/movies
+Content-Type: application/json
+
+
+### Get a Single Movie by ID (Public)
+
+GET http://localhost:5000/api/movies/6736069c7ba4eeb62ddea26a
+Content-Type: application/json
+
+
+
+### Add Trivia to a Movie (Logged-in User) 
+
+POST http://localhost:5000/api/movies/6736069c7ba4eeb62ddea26a/trivia
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzYxNTQwMTBkMTMyNmQ4NGUxZTg4NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzMxNjY4NTYyLCJleHAiOjE3MzE2NzIxNjJ9.DeKZGCW2OQ67kNUWZ_Gyo1sHdVCScPm5AHPu_RI5rLU
+
+{
+  "content": "This is an interesting trivia fact about the movie."
+}
+
+### Add a Goof to a Movie (Logged-in User)
+
+POST http://localhost:5000/api/movies/6736069c7ba4eeb62ddea26a/goofs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzYxNTQwMTBkMTMyNmQ4NGUxZTg4NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzMxNjY4NTYyLCJleHAiOjE3MzE2NzIxNjJ9.DeKZGCW2OQ67kNUWZ_Gyo1sHdVCScPm5AHPu_RI5rLU
+
+{
+  "category": "Continuity",
+  "description": "The hero's shirt changes color between scenes.",
+  "timestamp": "00:45:23"
+}

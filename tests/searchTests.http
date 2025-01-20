@@ -1,0 +1,15 @@
+### Test the movie search functionality
+GET http://localhost:3000/api/movies/search?q=Inception HTTP/1.1
+Content-Type: application/json
+
+### Test filtering movies with pagination, sorting, and fields
+GET http://localhost:3000/api/movies/filter?genre=Action&sort=-releaseDate&fields=title,director&page=1&limit=5 HTTP/1.1
+Content-Type: application/json
+
+### Test getting top movies for the past month
+GET http://localhost:3000/api/movies/top?period=month HTTP/1.1
+Content-Type: application/json
+
+# Test getting top movies for a specific genre
+GET http://localhost:3000/api/v1/movies/top?period=year&genre=Drama HTTP/1.1
+Content-Type: application/json

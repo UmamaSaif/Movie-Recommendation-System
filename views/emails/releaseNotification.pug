@@ -1,0 +1,12 @@
+// views/emails/releaseNotification.pug
+extends base
+
+block content
+  h1 New Release Coming Soon!
+  h2= movieTitle
+  p Release Date: #{releaseDate}
+  if trailerDate
+    p Trailer Date: #{trailerDate}
+  p
+    a(href=`/movies/${movieId}`) View Movie Details
+

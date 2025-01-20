@@ -1,0 +1,10 @@
+// views/emails/discussionReply.pug
+extends base
+
+block content
+  h1 New Reply to Your Discussion
+  h2= discussionTitle
+  p #{replyAuthor} replied:
+  blockquote= replyContent
+  p
+    a(href=`/discussions/${discussionId}`) View Discussion

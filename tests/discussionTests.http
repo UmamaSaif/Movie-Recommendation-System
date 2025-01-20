@@ -1,0 +1,24 @@
+# Create a new discussion:
+POST http://localhost:5000/api/discussions
+Content-Type: application/json
+Authorization: Bearer <your_user_token>
+
+{
+  "title": "Favorite Sci-Fi Movies?",
+  "content": "Let's discuss the best sci-fi movies!",
+  "category": "genre",
+  "relatedMovie": "64e2b17c2ad77f3e1786ec02",
+  "tags": ["sci-fi", "favorites"]
+}
+
+# Reply to a discussion:
+POST http://localhost:5000/api/discussions/64e2f1a71b2bf3d8af098b19/reply
+Content-Type: application/json
+Authorization: Bearer <your_user_token>
+
+{
+  "content": "I love Interstellar and Inception!"
+}
+
+# Get all discussions:
+GET http://localhost:5000/api/discussions

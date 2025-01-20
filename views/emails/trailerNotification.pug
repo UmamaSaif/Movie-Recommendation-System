@@ -1,0 +1,12 @@
+// views/emails/trailerNotification.pug
+extends base
+
+block content
+  h1 New Trailer Available
+  h2= movieTitle
+  p We're excited to share the new trailer for #{movieTitle} with you!
+  p
+    a(href=trailerUrl) Watch Trailer
+  p
+    a(href=`/movies/${movieId}`) View Movie Details
+

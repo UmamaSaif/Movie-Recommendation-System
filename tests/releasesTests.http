@@ -1,0 +1,15 @@
+# Create a new release (Admin only):
+POST http://localhost:5000/api/releases
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzViNzExMWVlMTEwYmNhMTMxMmNmYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczMTc4MjIyMiwiZXhwIjoxNzMxNzg1ODIyfQ._smnG3pl1lta2hJPcGAynvy4uUD2SKbywyjk4BGG3yo
+
+{
+  "movie": "64e2b17c2ad77f3e1786ec02",
+  "releaseDate": "2024-12-25",
+  "trailerDate": "2024-11-20",
+  "notificationType": ["email", "dashboard"]
+}
+
+# Subscribe to a release (Authenticated users):
+POST http://localhost:5000/api/releases/64e2f1a71b2bf3d8af098b19/subscribe
+Authorization: Bearer <your_user_token>

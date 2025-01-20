@@ -1,0 +1,129 @@
+### Admin Login (to get the JWT token)
+POST http://localhost:5000/api/users/login
+Content-Type: application/json
+
+{
+  "email": "admin@example.com",
+  "password": "securepassword"
+}
+
+###
+
+# Add a New Movie (Admin only)
+POST http://localhost:5000/api/admin/movies
+Content-Type: application/json
+Authorization: Bearer <admin_jwt_token>
+
+{
+  "title": "Example Movie",
+  "genres": ["Action", "Adventure"],
+  "releaseDate": "2023-01-01"
+}
+
+###
+
+# Update Movie (Admin only)
+PATCH http://localhost:5000/api/admin/movies/<movie_id>
+Content-Type: application/json
+Authorization: Bearer <admin_jwt_token>
+
+{
+  "title": "Updated Movie Title"
+}
+
+###
+
+# Delete Movie (Admin only)
+DELETE http://localhost:5000/api/admin/movies/<movie_id>
+Content-Type: application/json
+Authorization: Bearer <admin_jwt_token>
+
+###
+
+# Get All Reviews (Admin only)
+GET http://localhost:5000/api/admin/reviews
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzViNzExMWVlMTEwYmNhMTMxMmNmYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczMTc2MzgzMCwiZXhwIjoxNzMxNzY3NDMwfQ.-Ka56hUZ1El0K9Xa5ddkyv4ndijldy01uWDw8dyHU4Q
+
+###
+
+# Moderate a Review (Admin only)
+PATCH http://localhost:5000/api/admin/reviews/<review_id>/moderate
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzViNzExMWVlMTEwYmNhMTMxMmNmYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczMTU5ODAxMCwiZXhwIjoxNzMxNjAxNjEwfQ.j4qGynXy8oGHx3d1w8joNig02oKCiccFFzGxJoGSHVY
+
+{
+  "status": "approved"
+}
+
+###
+
+# View Site Statistics (Admin only)
+GET http://localhost:5000/api/admin/statistics
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzViNzExMWVlMTEwYmNhMTMxMmNmYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczMTc2MzgzMCwiZXhwIjoxNzMxNzY3NDMwfQ.-Ka56hUZ1El0K9Xa5ddkyv4ndijldy01uWDw8dyHU4Q
+
+###
+
+# View User Engagement Metrics (Admin only)
+GET http://localhost:5000/api/admin/user-engagement
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzViNzExMWVlMTEwYmNhMTMxMmNmYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczMTc2MzgzMCwiZXhwIjoxNzMxNzY3NDMwfQ.-Ka56hUZ1El0K9Xa5ddkyv4ndijldy01uWDw8dyHU4Q
+
+### Add a New Movie (Admin Only)
+POST http://localhost:5000/api/movies
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzViNzExMWVlMTEwYmNhMTMxMmNmYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczMTc2NjIwOCwiZXhwIjoxNzMxNzY5ODA4fQ.o_HpFpH_HkDHVuOol3Ti3nRHQpObOy5mcksuVQrKrZM
+
+{
+  "title": "Example Movie 2",
+  "genres": ["Comedy", "Adventure"],
+  "director": {
+    "name": "John Doe",
+    "role": "Director",
+    "biography": "Award-winning director...",
+    "filmography": [{
+      "title": "Next Movie",
+      "year": 2022,
+      "role": "Director"
+    }]
+  },
+  "releaseDate": "2023-01-01",
+  "runtime": 180,
+  "synopsis": "An exciting new adventure...",
+  "coverPhoto": "url/to/photo",
+  "ageRating": {
+    "rating": "PG-13",
+    "reasons": ["Language"],
+    "description": "Contains moderate mature language..."
+  },
+  "status": "Released"
+}
+
+### Update Movie (Admin Only)
+
+PATCH http://localhost:5000/api/movies/6736069c7ba4eeb62ddea26a
+Content-Type: application/json
+Authorization: Bearer <admin_jwt_token>
+
+{
+  "title": "Updated Example Movie"
+}
+
+
+### Delete Movie (Admin Only)
+
+DELETE http://localhost:5000/api/movies/6736069c7ba4eeb62ddea26a
+Content-Type: application/json
+Authorization: Bearer <admin_jwt_token>
+
+### Add Soundtrack to a Movie (Admin Only)
+
+POST http://localhost:5000/api/movies/<movie_id>/soundtrack
+Content-Type: application/json
+Authorization: Bearer <admin_jwt_token>
+
+{
+  "title": "Epic Soundtrack",
+  "artist": "John Composer",
+  "composer": "John Composer",
+  "duration": "3:45",
+  "scene": "Final Battle"
+}
